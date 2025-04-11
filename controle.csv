@@ -1,0 +1,21 @@
+ControleName,Command,Expected
+access,echo "$(uname)$(sudo whoami)",Linuxroot
+hostName,echo "$(hostname)$(ping -c 1 LIN-SRV 2>/dev/null|grep received)",LIN-SRV1
+admin,id admin,uid
+sudo,groups admin,sudo
+banner, echo "$(grep banner.txt /etc/ssh/sshd_config|cut -d ' ' -f1)$(sudo cat /home/admin/banner.txt)",BannerAcces restreint aux personnes autorisees CIEL.branly
+man,sudo apt show man-db|grep Installed,yes
+dnsutils,sudo apt show dnsutils|grep Installed,yes
+nslog,sudo cat /home/admin/ns.log|grep Server,8.8.8.8
+grp,sudo cut -d: -f1 /etc/group | grep -E "Informatique|Direction|Finances" | sort | paste -sd "",DirectionFinancesInformatique
+users,echo "$(id averse 2>/dev/null | grep -o Informatique | head -n 1)$(id aversaire 2>/dev/null | grep -o Direction | head -n 1)$(id gmenvussa 2>/dev/null | grep -o Finances | head -n 1)$(id gdon 2>/dev/null | grep -o Finances | head -n 1)",InformatiqueDirectionFinancesFinances
+share,sudo ls -la /home/budget/|grep Finances|cut -d' ' -f1,d---rwx---
+file,sudo ls -la /home/budget/factures.txt|grep Finances|cut -d' ' -f1,-rw-rw----
+script,sudo echo "$(sudo ls -l /home/admin/logusers.sh | grep -o rwx)$(sudo cat /home/admin/logusers.sh|grep -o /bin/bash)$(sudo cat /home/admin/logusers.sh|grep -o date)$(sudo cat /home/admin/logusers.sh|grep -o who)"$(sudo ls /home/admin/users.log|cut -d/ -f4)"",rwx/bin/bashdatewhousers.log
+cron,echo "$(sudo grep -o "gdon" /home/admin/users.log | wc -l | awk '$1 > 3 {print "OK"}')$(sudo grep -o "averse" /home/admin/users.log | wc -l | awk '$1 > 3 {print "OK"}')$(sudo cat /var/spool/cron/crontabs/root | grep -o /2)",OKOK/2
+smbd,echo "$(sudo systemctl status smbd | grep -o running)",running
+samba,echo "$(sudo pdbedit -L | grep -o gdon)",gdon
+prog,sudo ls -l /home/averse/prog/a.out | grep -o rwx,rwx
+git,sudo git --git-dir=/home/averse/prog/.git log | grep -o first,first
+score,echo "$(sudo cat /home/averse/prog/devine.c | grep -o score | wc -w)$(sudo git --git-dir=/home/averse/prog/.git log | grep -o score)",score
+github,sudo git --git-dir=/home/averse/prog/.git remote -v |grep -o devinette.git,devinette.git
