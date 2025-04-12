@@ -3,8 +3,8 @@ Lycée Branly Lyon\
 *Version 2025*\
 **SD**
 ## Configuration des postes avec Docker-compose
-``` PowerShell
 1. S’assurer que tous les processus Docker sont arrêtés.
+``` PowerShell
 Stop-Process -Name "Docker Desktop" -Force
 Stop-Process -Name "com.docker.backend" -Force
 Stop-Process -Name "com.docker.build" -Force
@@ -18,7 +18,7 @@ netsh interface portproxy delete v4tov4 listenport=2375 listenaddress=0.0.0.0
 Restart-Service iphlpsvc
 ```
 4.	Autoriser l’accès au deamon Docker sur WSL2 :
-Modifier/vérifier  C:\Utilisateurs\tpdocker\.docker\deamon.json . Ajouter/vérifier la ligne en gras :
+Modifier/vérifier  C:\Utilisateurs\tpdocker\.docker\deamon.json . Ajouter/vérifier la 1er ligne :
 ``` json
 {
 	"hosts": ["tcp://0.0.0.0:2375"],
@@ -34,7 +34,7 @@ Modifier/vérifier  C:\Utilisateurs\tpdocker\.docker\deamon.json . Ajouter/véri
 ``` PowerShell
 netsh interface portproxy add v4tov4 listenport=2375 listenaddress=0.0.0.0 connectport=2375 connectaddress=127.0.0.1
 ```
-9.	Ajouter une règle de pare-feu par la commande PowerShell :
+9.	Ajouter une règle de pare-feu par la commande PowerShell (cocher la case dans paramètre):
 ``` PowerShell
 New-NetFirewallRule -DisplayName "Docker Remote API CIEL" -Direction Inbound -Protocol TCP -LocalPort 2375 -RemoteAddress 172.17.50.137 -Action Allow
 ```
