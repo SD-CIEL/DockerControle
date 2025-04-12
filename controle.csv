@@ -1,3 +1,4 @@
 ControleName,ContainerName,Command,Expected
 contMosquitto,mqtt_broker,cat /proc/1/comm	,mosquitto
 logMosquitto,mqtt_broker,cat /mosquitto/log/mosquitto.log | grep -o \"Opening ipv4 listen socket on port 1883\" | head -1,Opening ipv4 listen socket on port 1883
+postManMosquitto,mqtt_broker,ls,ls
