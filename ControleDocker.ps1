@@ -40,9 +40,13 @@ foreach ($item in $tableNotes) {
 foreach ($item in $tableNotes) {
    $item | Add-Member -MemberType NoteProperty -Name "ping" -Value ""
 }
-# Ajouter colonne connect
+# Ajouter colonne acces-cont-run
 foreach ($item in $tableNotes) {
-   $item | Add-Member -MemberType NoteProperty -Name "connect" -Value ""
+   $item | Add-Member -MemberType NoteProperty -Name "cont" -Value ""
+}
+# Ajouter colonne acces-cont-run
+foreach ($item in $tableNotes) {
+   $item | Add-Member -MemberType NoteProperty -Name "Run" -Value ""
 }
 
 
@@ -90,6 +94,7 @@ $data = Import-Csv $csvPath
 
 # Initialiser les tableaux
 $controleNames = @()
+$containerNames = @()
 $commands = @()
 $expectedValues = @()
 
@@ -97,45 +102,108 @@ $expectedValues = @()
 foreach ($row in $data) {
     $controleNames += $row.ControleName
     $commands += $row.Command
+    $containerNames += $row.ContainerName
     $expectedValues += $row.Expected
     foreach ($item in $tableNotes) {
         $item | Add-Member -MemberType NoteProperty -Name $row.ControleName -Value ""
     }
 }
 
+# -------------------------------------------------------------------------------
+# Executer les tests pour un Docker
+function Execute-Tests {
+    param (
+        [object]$ip
+    )
+        # Vérifier si la session est valide
+    if (-not $ip ) {
+        Write-Host "   ❌ $ip invalide ou non connectée." -ForegroundColor Red
+        return $null
+    }
+
+    # Tableau pour stocker les résultats
+    $results = @()
+
+    # Exécuter les commandes et stocker les résultats
+    for ($i = 0; $i -lt $commands.Length; $i++) {
+        $command = $commands[$i]
+        $containerName= $containerNames[$i]
+        $expectedValue = $expectedValues[$i]
+        $result = docker -H tcp://$($ip):2375 exec -it $containerName sh -c $($command)
+        $match = [bool]($result -match $expectedValue)
+        $results += [PSCustomObject]@{
+            Command       = $command
+            Output        = $result
+            ExpectedValue = $expectedValue
+            Match         = $match
+        }
+        if ($match) {
+            Write-Host "  - Executing tests on host: $result" -ForegroundColor Yellow
+        }else{
+            Write-Host "  - Executing tests on host: $result" -ForegroundColor Red
+        }
+
+
+    }
+    return $results
+}
+
+        #Write-Host "INFO : $testResults" -ForegroundColor Yellow
 
 # -------------------------------------------------------------------------------
-#Tests
+# Boucle de Tests
 
    for ($i = 0; $i -lt $tableNotes.Count; $i++) 
    {
      if ($tableNotes[$i].ping)
      {
+        $note=0;
+        Write-Host "Executing tests on host: $($tableNotes[$i].nom) $($tableNotes[$i].ip)" -ForegroundColor Cyan
 
-        Write-Host "INFO : "$tableNotes[$i].ip -ForegroundColor Cyan
         $Result;
         try{ 
             $response = Invoke-WebRequest -Uri http://$($tableNotes[$i].ip):2375/info
-            $data = $response.Content | ConvertFrom-Json
-            $result="✅-"+$($data.Containers)+ "-"+$($data.ContainersRunning )
-        #Write-Host "Containers : $($data.Containers)" -ForegroundColor Green
-        #Write-Host "ContainersRunning  : $($data.ContainersRunning )" -ForegroundColor Green
-        #Write-Host "Images  : $($data.Images )" -ForegroundColor Green
+            if ($response.Headers["Content-Type"] -like "application/json*") {
+               # Write-Host "INFO : $response" -ForegroundColor Yellow
+               $data= $response.Content | ConvertFrom-Json
+               $tableNotes[$i].cont = $data.Containers
+               $tableNotes[$i].run= $data.ContainersRunning
+                    $result="✅-"+$($data.Containers)+ "-"+$($data.ContainersRunning )
+                    Write-Host "Images  : $($result )" -ForegroundColor Green
+               $note=1;
+             }
+            
         }
         catch {
             Write-Host "❌ Pas joignable !" -ForegroundColor Red
         }
 
+        # Réaliser les tests 
+        $testResults = Execute-Tests -ip $tableNotes[$i].ip
+
+        
+        for ($j = 0; $j -lt $commands.Length; $j++) {
+            $command = $commands[$j]
+            $controleName = $controleNames[$j]
+            $columnName = "$controleName"
+
+            # Récupérer le résultat correspondant
+            $matchValue = ($testResults | Where-Object { $_.Command -eq $command } | Select-Object -First 1).Match
+
+            $tableNotes[$i].$columnName=$matchValue
+            if ($matchValue) {$note++}
+        }  
+        $tableNotes[$i].NOTE=$note 
 
 
-        Write-Host "Images  : $($result )" -ForegroundColor Green
+
         $response =""
-        $response = Invoke-WebRequest -Uri http://172.17.50.134:2375/containers/json
+        $response = Invoke-WebRequest -Uri http://$($tableNotes[$i].ip):2375/containers/json
         $data = $response.Content | ConvertFrom-Json
         Write-Host "Names : $($data.Names)" -ForegroundColor Green
         Write-Host "State  : $($data.State )" -ForegroundColor Green
 
-        docker -H tcp://172.17.50.134:2375 exec -it mqtt_broker sh -c "cat /proc/1/comm" 
+        docker -H tcp://$($tableNotes[$i].ip):2375 exec -it mqtt_broker sh -c "cat /proc/1/comm" 
 
 
         # Afficher les résultats
