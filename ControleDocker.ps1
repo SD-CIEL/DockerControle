@@ -141,14 +141,14 @@ function Execute-Tests {
             "inspect" {
                  $resultJson = docker -H tcp://$($ip):2375 inspect $containerName | ConvertFrom-Json
                  $result = Invoke-Expression "`$resultJson.$command" 
-                 Write-Host "INFO : "$($result) -ForegroundColor Yellow
+                 #Write-Host "INFO : "$($result) -ForegroundColor Yellow
             }
             default {
                  $result = $nul
             }
         }
-        # Test si les mots séparer par un - dans #expectedValue sont présent dans le result
-        $pattern = ($expectedValue -split "-" | ForEach-Object { "(?=.*\b$_\b)" }) -join ""
+        # Test si les mots séparer par un % dans #expectedValue sont présent dans le result
+        $pattern = ($expectedValue -split "%" | ForEach-Object { "(?=.*\b$_\b)" }) -join ""
         $match = "$result" -match $pattern
 
         $results += [PSCustomObject]@{
@@ -160,7 +160,7 @@ function Execute-Tests {
         if ($match) {
             Write-Host "  - Executing tests $controleName : ✅ $result" -ForegroundColor Green
         }else{
-            Write-Host "  - Executing tests $controleName : ❌ $expectedValue" -ForegroundColor Yellow
+            Write-Host "  - Executing tests $controleName : ❌ $result ✅$expectedValue" -ForegroundColor Yellow
         }
 
 
