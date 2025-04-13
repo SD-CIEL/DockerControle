@@ -94,6 +94,7 @@ $data = Import-Csv $csvPath
 
 # Initialiser les tableaux
 $controleNames = @()
+$fonctionDockers =@()
 $containerNames = @()
 $commands = @()
 $expectedValues = @()
@@ -101,8 +102,9 @@ $expectedValues = @()
 # Remplir les tableaux
 foreach ($row in $data) {
     $controleNames += $row.ControleName
-    $commands += $row.Command
+    $fonctionDockers += $row.FonctionDocker
     $containerNames += $row.ContainerName
+    $commands += $row.Command
     $expectedValues += $row.Expected
     foreach ($item in $tableNotes) {
         $item | Add-Member -MemberType NoteProperty -Name $row.ControleName -Value ""
@@ -126,12 +128,29 @@ function Execute-Tests {
 
     # Exécuter les commandes et stocker les résultats
     for ($i = 0; $i -lt $commands.Length; $i++) {
-        $controleName=$controleNames[$i]
+        $fonctionDocker = $fonctionDockers[$i]
+        $controleName = $controleNames[$i]
+        $containerName = $containerNames[$i]
         $command = $commands[$i]
-        $containerName= $containerNames[$i]
         $expectedValue = $expectedValues[$i]
-        $result = docker -H tcp://$($ip):2375 exec -it $containerName sh -c $($command) 2>$null
-        $match = [bool]($result -match $expectedValue)
+        switch ($fonctionDocker)
+        {
+            "exec" {
+                 $result = docker -H tcp://$($ip):2375 exec -it $containerName sh -c $($command) 2>$null
+            }
+            "inspect" {
+                 $resultJson = docker -H tcp://$($ip):2375 inspect $containerName | ConvertFrom-Json
+                 $result = Invoke-Expression "`$resultJson.$command" 
+                 Write-Host "INFO : "$($result) -ForegroundColor Yellow
+            }
+            default {
+                 $result = $nul
+            }
+        }
+        # Test si les mots séparer par un - dans #expectedValue sont présent dans le result
+        $pattern = ($expectedValue -split "-" | ForEach-Object { "(?=.*\b$_\b)" }) -join ""
+        $match = "$result" -match $pattern
+
         $results += [PSCustomObject]@{
             Command       = $command
             Output        = $result
@@ -141,7 +160,7 @@ function Execute-Tests {
         if ($match) {
             Write-Host "  - Executing tests $controleName : ✅ $result" -ForegroundColor Green
         }else{
-            Write-Host "  - Executing tests $controleName : ❌ $result" -ForegroundColor Yellow
+            Write-Host "  - Executing tests $controleName : ❌ $expectedValue" -ForegroundColor Yellow
         }
 
 
@@ -164,7 +183,6 @@ function Execute-Tests {
         try{ 
             $response = Invoke-WebRequest -Uri http://$($tableNotes[$i].ip):2375/info 2>$null
             if ($response.Headers["Content-Type"] -like "application/json*") {
-               # Write-Host "INFO : $response" -ForegroundColor Yellow
                $data= $response.Content | ConvertFrom-Json
                $tableNotes[$i].cont = $data.Containers
                $tableNotes[$i].run= $data.ContainersRunning

@@ -1,5 +1,6 @@
-ControleName,ContainerName,Command,Expected
-contMosquitto,mqtt_broker,cat /proc/1/comm	,mosquitto
-logMosquitto,mqtt_broker,cat /mosquitto/log/mosquitto.log | grep -o \"Opening ipv4 listen socket on port 1883\" | head -1,Opening ipv4 listen socket on port 1883
-postManMosquitto,mqtt_broker,cat /mosquitto/log/mosquitto.log | grep -o \"PUBLISH to postman\" | head -1,PUBLISH to postman
-publishMyTopic,mqtt_broker,cat /mosquitto/log/mosquitto.log | grep -o "myTopic" | head -1,myTopic
+ControleName,FonctionDocker,ContainerName,Command,Expected
+contMosquitto,exec,mqtt_broker,cat /proc/1/comm	,mosquitto
+logMosquitto,exec,mqtt_broker,cat /mosquitto/log/mosquitto.log | grep -o \"Opening ipv4 listen socket on port 1883\" | head -1,Opening ipv4 listen socket on port 1883
+postManMosquitto,exec,mqtt_broker,cat /mosquitto/log/mosquitto.log | grep -o \"PUBLISH to postman\" | head -1,PUBLISH to postman
+publishMyTopic,exec,mqtt_broker,cat /mosquitto/log/mosquitto.log | grep -o "myTopic" | head -1,myTopic
+volumeMosquitto,inspect,mqtt_broker,Mounts.Source,Mosquitto-log-config-data
