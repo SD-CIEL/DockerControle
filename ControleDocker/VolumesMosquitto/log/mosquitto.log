@@ -38,3 +38,62 @@
 1744733960: Opening ipv6 listen socket on port 1883.
 1744733960: Opening websockets listen socket on port 9001.
 1744733960: mosquitto version 2.0.21 running
+1744735882: New connection from 172.22.0.1:41906 on port 1883.
+1744735882: New client connected from 172.22.0.1:41906 as postman-mqtt-client-1744724568267 (p5, c0, k60).
+1744735882: No will message specified.
+1744735882: Sending CONNACK to postman-mqtt-client-1744724568267 (0, 0)
+1744735882: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744735882: 	TopicControle (QoS 0)
+1744735882: postman-mqtt-client-1744724568267 0 TopicControle
+1744735882: Sending SUBACK to postman-mqtt-client-1744724568267
+1744735882: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744735882: 	BTS (QoS 0)
+1744735882: postman-mqtt-client-1744724568267 0 BTS
+1744735882: Sending SUBACK to postman-mqtt-client-1744724568267
+1744735884: Received PUBLISH from postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744735884: Sending PUBLISH to postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744735911: Received PUBLISH from postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744735911: Sending PUBLISH to postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744735971: Received PINGREQ from postman-mqtt-client-1744724568267
+1744735971: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736031: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736031: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736091: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736091: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736151: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736151: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736211: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736211: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736271: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736271: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736331: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736331: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736391: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736391: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736451: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736451: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736511: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736511: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736571: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736571: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736631: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736631: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736691: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736691: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736751: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736751: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736811: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736811: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736871: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736871: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744736931: Received PINGREQ from postman-mqtt-client-1744724568267
+1744736931: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744739408: Client postman-mqtt-client-1744724568267 has exceeded timeout, disconnecting.
+1744744730: mosquitto version 2.0.21 terminating
+1744744895: mosquitto version 2.0.21 starting
+1744744895: Config loaded from /mosquitto/config/mosquitto.conf.
+1744744895: Opening ipv4 listen socket on port 1883.
+1744744895: Opening ipv6 listen socket on port 1883.
+1744744895: Opening websockets listen socket on port 9001.
+1744744895: mosquitto version 2.0.21 running
+1744745123: mosquitto version 2.0.21 terminating
