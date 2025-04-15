@@ -1,6 +1,40 @@
-1744723267: mosquitto version 2.0.21 starting
-1744723267: Config loaded from /mosquitto/config/mosquitto.conf.
-1744723267: Opening ipv4 listen socket on port 1883.
-1744723267: Opening ipv6 listen socket on port 1883.
-1744723267: Opening websockets listen socket on port 9001.
-1744723267: mosquitto version 2.0.21 running
+1744730317: No will message specified.
+1744730317: Sending CONNACK to postman-mqtt-client-1744724568267 (0, 0)
+1744730317: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744730317: 	TopicControle (QoS 0)
+1744730317: Sending SUBACK to postman-mqtt-client-1744724568267
+1744730317: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744730317: 	BTS (QoS 0)
+1744730317: Sending SUBACK to postman-mqtt-client-1744724568267
+1744730338: Received UNSUBSCRIBE from postman-mqtt-client-1744724568267
+1744730338: 	TopicControle
+1744730338: Sending UNSUBACK to postman-mqtt-client-1744724568267
+1744730339: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744730339: 	TopicControle (QoS 0)
+1744730339: Sending SUBACK to postman-mqtt-client-1744724568267
+1744730361: Received PUBLISH from postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744730361: Sending PUBLISH to postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744730362: Received PUBLISH from postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744730362: Sending PUBLISH to postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744730422: Received PINGREQ from postman-mqtt-client-1744724568267
+1744730422: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744733837: No will message specified.
+1744733837: Sending CONNACK to postman-mqtt-client-1744724568267 (0, 0)
+1744733837: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744733837: 	TopicControle (QoS 0)
+1744733837: Sending SUBACK to postman-mqtt-client-1744724568267
+1744733837: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744733837: 	BTS (QoS 0)
+1744733837: Sending SUBACK to postman-mqtt-client-1744724568267
+1744733851: Received PUBLISH from postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744733851: Sending PUBLISH to postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744733853: Received PUBLISH from postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744733853: Sending PUBLISH to postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (11 bytes))
+1744733913: Received PINGREQ from postman-mqtt-client-1744724568267
+1744733913: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744733960: mosquitto version 2.0.21 starting
+1744733960: Config loaded from /mosquitto/config/mosquitto.conf.
+1744733960: Opening ipv4 listen socket on port 1883.
+1744733960: Opening ipv6 listen socket on port 1883.
+1744733960: Opening websockets listen socket on port 9001.
+1744733960: mosquitto version 2.0.21 running
