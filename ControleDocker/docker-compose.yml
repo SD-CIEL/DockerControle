@@ -4,6 +4,7 @@ services:
     container_name: mqtt_mosquitto
     ports:
       - "1883:1883"
+      - "9005:9001" # Websocket mqttx
     volumes:
       - ./VolumesMosquitto/config:/mosquitto/config
       - ./VolumesMosquitto/data:/mosquitto/data
@@ -16,3 +17,16 @@ services:
     depends_on:
       - mqtt_broker
 
+  portainer:
+    image: portainer/portainer-ce:alpine
+    container_name: mqtt_portainer
+    command: -H unix:///var/run/docker.sock
+    ports:
+      - "9000:9000"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "portainer_data:/data"
+    restart: always
+
+volumes:
+  portainer_data:

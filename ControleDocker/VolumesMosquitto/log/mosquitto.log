@@ -97,3 +97,469 @@
 1744744895: Opening websockets listen socket on port 9001.
 1744744895: mosquitto version 2.0.21 running
 1744745123: mosquitto version 2.0.21 terminating
+1744745210: mosquitto version 2.0.21 starting
+1744745210: Config loaded from /mosquitto/config/mosquitto.conf.
+1744745210: Opening ipv4 listen socket on port 1883.
+1744745210: Opening ipv6 listen socket on port 1883.
+1744745210: Opening websockets listen socket on port 9001.
+1744745210: mosquitto version 2.0.21 running
+1744782153: mosquitto version 2.0.21 terminating
+1744782616: mosquitto version 2.0.21 starting
+1744782616: Config loaded from /mosquitto/config/mosquitto.conf.
+1744782616: Opening ipv4 listen socket on port 1883.
+1744782616: Opening ipv6 listen socket on port 1883.
+1744782616: Opening websockets listen socket on port 9001.
+1744782616: mosquitto version 2.0.21 running
+1744782736: mosquitto version 2.0.21 terminating
+1744782874: mosquitto version 2.0.21 starting
+1744782874: Config loaded from /mosquitto/config/mosquitto.conf.
+1744782874: Opening ipv4 listen socket on port 1883.
+1744782874: Opening ipv6 listen socket on port 1883.
+1744782874: Opening websockets listen socket on port 9001.
+1744782874: mosquitto version 2.0.21 running
+1744782988: New client connected from ::ffff:172.22.0.1:36550 as mqttx_b418a851 (p5, c1, k60).
+1744782988: No will message specified.
+1744782988: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744783032: Received DISCONNECT from mqttx_b418a851
+1744783032: Client mqttx_b418a851 disconnected.
+1744783043: mosquitto version 2.0.21 terminating
+1744783047: mosquitto version 2.0.21 starting
+1744783047: Config loaded from /mosquitto/config/mosquitto.conf.
+1744783047: Opening ipv4 listen socket on port 1883.
+1744783047: Opening ipv6 listen socket on port 1883.
+1744783047: Opening websockets listen socket on port 9001.
+1744783047: mosquitto version 2.0.21 running
+1744783068: New connection from 172.22.0.1:40212 on port 1883.
+1744783068: New client connected from 172.22.0.1:40212 as postman-mqtt-client-1744724568267 (p5, c0, k60).
+1744783068: No will message specified.
+1744783068: Sending CONNACK to postman-mqtt-client-1744724568267 (0, 0)
+1744783068: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744783068: 	TopicControle (QoS 0)
+1744783068: postman-mqtt-client-1744724568267 0 TopicControle
+1744783068: Sending SUBACK to postman-mqtt-client-1744724568267
+1744783068: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744783068: 	BTS (QoS 0)
+1744783068: postman-mqtt-client-1744724568267 0 BTS
+1744783068: Sending SUBACK to postman-mqtt-client-1744724568267
+1744783092: Received PUBLISH from postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'pubsd', ... (11 bytes))
+1744783119: mosquitto version 2.0.21 terminating
+1744783125: mosquitto version 2.0.21 starting
+1744783125: Config loaded from /mosquitto/config/mosquitto.conf.
+1744783125: Opening ipv4 listen socket on port 1883.
+1744783125: Opening ipv6 listen socket on port 1883.
+1744783125: Opening websockets listen socket on port 9001.
+1744783125: mosquitto version 2.0.21 running
+1744783178: New connection from 172.22.0.1:48804 on port 1883.
+1744783178: New client connected from 172.22.0.1:48804 as postman-mqtt-client-1744724568267 (p5, c0, k60).
+1744783178: No will message specified.
+1744783178: Sending CONNACK to postman-mqtt-client-1744724568267 (0, 0)
+1744783178: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744783178: 	TopicControle (QoS 0)
+1744783178: postman-mqtt-client-1744724568267 0 TopicControle
+1744783178: Sending SUBACK to postman-mqtt-client-1744724568267
+1744783178: Received SUBSCRIBE from postman-mqtt-client-1744724568267
+1744783178: 	BTS (QoS 0)
+1744783178: postman-mqtt-client-1744724568267 0 BTS
+1744783178: Sending SUBACK to postman-mqtt-client-1744724568267
+1744783238: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783238: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783297: Received PUBLISH from postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1744783297: Sending PUBLISH to postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1744783334: New client connected from ::ffff:172.22.0.1:55072 as mqttx_b418a851 (p5, c1, k60).
+1744783334: No will message specified.
+1744783334: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744783357: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783357: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783394: Received PINGREQ from mqttx_b418a851
+1744783394: Sending PINGRESP to mqttx_b418a851
+1744783417: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783417: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783454: Received PINGREQ from mqttx_b418a851
+1744783454: Sending PINGRESP to mqttx_b418a851
+1744783477: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783477: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783514: Received PINGREQ from mqttx_b418a851
+1744783514: Sending PINGRESP to mqttx_b418a851
+1744783537: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783537: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783574: Received PINGREQ from mqttx_b418a851
+1744783574: Sending PINGRESP to mqttx_b418a851
+1744783597: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783597: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783634: Received PINGREQ from mqttx_b418a851
+1744783634: Sending PINGRESP to mqttx_b418a851
+1744783657: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783657: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783694: Received PINGREQ from mqttx_b418a851
+1744783694: Sending PINGRESP to mqttx_b418a851
+1744783717: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783717: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783754: Received PINGREQ from mqttx_b418a851
+1744783754: Sending PINGRESP to mqttx_b418a851
+1744783777: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783777: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783814: Received PINGREQ from mqttx_b418a851
+1744783814: Sending PINGRESP to mqttx_b418a851
+1744783837: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783837: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783874: Received PINGREQ from mqttx_b418a851
+1744783874: Sending PINGRESP to mqttx_b418a851
+1744783897: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783897: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783934: Received PINGREQ from mqttx_b418a851
+1744783934: Sending PINGRESP to mqttx_b418a851
+1744783957: Received PINGREQ from postman-mqtt-client-1744724568267
+1744783957: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744783994: Received PINGREQ from mqttx_b418a851
+1744783994: Sending PINGRESP to mqttx_b418a851
+1744784017: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784017: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784054: Received PINGREQ from mqttx_b418a851
+1744784054: Sending PINGRESP to mqttx_b418a851
+1744784077: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784077: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784114: Received PINGREQ from mqttx_b418a851
+1744784114: Sending PINGRESP to mqttx_b418a851
+1744784137: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784137: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784174: Received PINGREQ from mqttx_b418a851
+1744784174: Sending PINGRESP to mqttx_b418a851
+1744784197: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784197: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784234: Received PINGREQ from mqttx_b418a851
+1744784234: Sending PINGRESP to mqttx_b418a851
+1744784257: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784257: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784294: Received PINGREQ from mqttx_b418a851
+1744784294: Sending PINGRESP to mqttx_b418a851
+1744784317: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784317: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784354: Received PINGREQ from mqttx_b418a851
+1744784354: Sending PINGRESP to mqttx_b418a851
+1744784377: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784377: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784414: Received PINGREQ from mqttx_b418a851
+1744784414: Sending PINGRESP to mqttx_b418a851
+1744784437: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784437: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784474: Received PINGREQ from mqttx_b418a851
+1744784474: Sending PINGRESP to mqttx_b418a851
+1744784497: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784497: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784534: Received PINGREQ from mqttx_b418a851
+1744784534: Sending PINGRESP to mqttx_b418a851
+1744784558: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784558: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784594: Received PINGREQ from mqttx_b418a851
+1744784594: Sending PINGRESP to mqttx_b418a851
+1744784618: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784618: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784654: Received PINGREQ from mqttx_b418a851
+1744784654: Sending PINGRESP to mqttx_b418a851
+1744784678: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784678: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784714: Received PINGREQ from mqttx_b418a851
+1744784714: Sending PINGRESP to mqttx_b418a851
+1744784738: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784738: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784774: Received PINGREQ from mqttx_b418a851
+1744784774: Sending PINGRESP to mqttx_b418a851
+1744784798: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784798: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784834: Received PINGREQ from mqttx_b418a851
+1744784834: Sending PINGRESP to mqttx_b418a851
+1744784858: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784858: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784918: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784918: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744784925: Client mqttx_b418a851 closed its connection.
+1744784978: Received PINGREQ from postman-mqtt-client-1744724568267
+1744784978: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785038: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785038: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785065: New client connected from ::ffff:172.22.0.1:45948 as mqttx_b418a851 (p5, c1, k60).
+1744785065: No will message specified.
+1744785065: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744785098: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785098: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785125: Client mqttx_b418a851 closed its connection.
+1744785158: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785158: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785185: New client connected from ::ffff:172.22.0.1:42928 as mqttx_b418a851 (p5, c1, k60).
+1744785185: No will message specified.
+1744785185: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744785218: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785218: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785245: Client mqttx_b418a851 closed its connection.
+1744785278: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785278: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785305: New client connected from ::ffff:172.22.0.1:52016 as mqttx_b418a851 (p5, c1, k60).
+1744785305: No will message specified.
+1744785305: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744785338: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785338: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785365: Client mqttx_b418a851 closed its connection.
+1744785398: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785398: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785425: New client connected from ::ffff:172.22.0.1:47306 as mqttx_b418a851 (p5, c1, k60).
+1744785425: No will message specified.
+1744785425: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744785458: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785458: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785485: Client mqttx_b418a851 closed its connection.
+1744785518: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785518: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785545: New client connected from ::ffff:172.22.0.1:36504 as mqttx_b418a851 (p5, c1, k60).
+1744785545: No will message specified.
+1744785545: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744785578: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785578: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785605: Client mqttx_b418a851 closed its connection.
+1744785638: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785638: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785665: New client connected from ::ffff:172.22.0.1:48458 as mqttx_b418a851 (p5, c1, k60).
+1744785665: No will message specified.
+1744785665: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744785698: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785698: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785725: Client mqttx_b418a851 closed its connection.
+1744785758: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785758: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785785: New client connected from ::ffff:172.22.0.1:46852 as mqttx_b418a851 (p5, c1, k60).
+1744785785: No will message specified.
+1744785785: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744785818: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785818: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785845: Client mqttx_b418a851 closed its connection.
+1744785878: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785878: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785905: New client connected from ::ffff:172.22.0.1:47862 as mqttx_b418a851 (p5, c1, k60).
+1744785905: No will message specified.
+1744785905: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744785938: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785938: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744785965: Client mqttx_b418a851 closed its connection.
+1744785998: Received PINGREQ from postman-mqtt-client-1744724568267
+1744785998: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786025: New client connected from ::ffff:172.22.0.1:44494 as mqttx_b418a851 (p5, c1, k60).
+1744786025: No will message specified.
+1744786025: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744786058: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786058: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786085: Client mqttx_b418a851 closed its connection.
+1744786118: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786118: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786145: New client connected from ::ffff:172.22.0.1:54594 as mqttx_b418a851 (p5, c1, k60).
+1744786145: No will message specified.
+1744786145: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744786178: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786178: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786205: Client mqttx_b418a851 closed its connection.
+1744786238: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786238: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786265: New client connected from ::ffff:172.22.0.1:58572 as mqttx_b418a851 (p5, c1, k60).
+1744786265: No will message specified.
+1744786265: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744786298: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786298: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786325: Client mqttx_b418a851 closed its connection.
+1744786358: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786358: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786385: New client connected from ::ffff:172.22.0.1:43564 as mqttx_b418a851 (p5, c1, k60).
+1744786385: No will message specified.
+1744786385: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744786418: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786418: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786445: Client mqttx_b418a851 closed its connection.
+1744786478: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786478: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786538: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786538: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786598: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786598: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786658: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786658: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786718: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786718: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786778: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786778: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786838: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786838: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786898: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786898: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744786958: Received PINGREQ from postman-mqtt-client-1744724568267
+1744786958: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787018: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787018: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787078: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787078: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787138: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787138: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787198: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787198: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787258: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787258: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787318: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787318: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787378: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787378: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787438: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787438: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787498: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787498: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787558: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787558: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787618: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787618: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787678: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787678: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787738: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787738: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787798: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787798: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787858: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787858: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787918: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787918: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744787978: Received PINGREQ from postman-mqtt-client-1744724568267
+1744787978: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788038: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788038: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788098: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788098: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788158: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788158: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788218: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788218: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788278: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788278: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788338: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788338: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788398: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788398: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788458: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788458: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788518: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788518: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788528: New client connected from ::ffff:172.22.0.1:60652 as mqttx_b418a851 (p5, c1, k60).
+1744788528: No will message specified.
+1744788528: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744788537: Received SUBSCRIBE from mqttx_b418a851
+1744788537: 	BTS (QoS 0)
+1744788537: mqttx_b418a851 0 BTS
+1744788537: Sending SUBACK to mqttx_b418a851
+1744788569: Received PUBLISH from mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1744788569: Sending PUBLISH to postman-mqtt-client-1744724568267 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1744788569: Sending PUBLISH to mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1744788578: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788578: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788629: Received PINGREQ from mqttx_b418a851
+1744788629: Sending PINGRESP to mqttx_b418a851
+1744788638: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788638: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788690: Received PINGREQ from mqttx_b418a851
+1744788690: Sending PINGRESP to mqttx_b418a851
+1744788698: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788698: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788751: Received PINGREQ from mqttx_b418a851
+1744788751: Sending PINGRESP to mqttx_b418a851
+1744788758: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788758: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788811: Received PINGREQ from mqttx_b418a851
+1744788811: Sending PINGRESP to mqttx_b418a851
+1744788818: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788818: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788871: Received PINGREQ from mqttx_b418a851
+1744788871: Sending PINGRESP to mqttx_b418a851
+1744788878: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788878: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788932: Received PINGREQ from mqttx_b418a851
+1744788932: Sending PINGRESP to mqttx_b418a851
+1744788938: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788938: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744788993: Received PINGREQ from mqttx_b418a851
+1744788993: Sending PINGRESP to mqttx_b418a851
+1744788998: Received PINGREQ from postman-mqtt-client-1744724568267
+1744788998: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744789058: Received PINGREQ from postman-mqtt-client-1744724568267
+1744789058: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744789084: Client mqttx_b418a851 closed its connection.
+1744789089: New client connected from ::ffff:172.22.0.1:32886 as mqttx_b418a851 (p5, c1, k60).
+1744789089: No will message specified.
+1744789089: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744789089: Received SUBSCRIBE from mqttx_b418a851
+1744789089: 	BTS (QoS 0)
+1744789089: mqttx_b418a851 0 BTS
+1744789089: Sending SUBACK to mqttx_b418a851
+1744789118: Received PINGREQ from postman-mqtt-client-1744724568267
+1744789118: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744789149: Received PINGREQ from mqttx_b418a851
+1744789149: Sending PINGRESP to mqttx_b418a851
+1744789178: Received PINGREQ from postman-mqtt-client-1744724568267
+1744789178: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744789210: Received PINGREQ from mqttx_b418a851
+1744789210: Sending PINGRESP to mqttx_b418a851
+1744789238: Received PINGREQ from postman-mqtt-client-1744724568267
+1744789238: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744789298: Received PINGREQ from postman-mqtt-client-1744724568267
+1744789298: Sending PINGRESP to postman-mqtt-client-1744724568267
+1744789301: Client mqttx_b418a851 closed its connection.
+1744789344: mosquitto version 2.0.21 terminating
+1744789364: mosquitto version 2.0.21 starting
+1744789364: Config loaded from /mosquitto/config/mosquitto.conf.
+1744789364: Opening ipv4 listen socket on port 1883.
+1744789364: Opening ipv6 listen socket on port 1883.
+1744789364: Opening websockets listen socket on port 9001.
+1744789364: mosquitto version 2.0.21 running
+1744789445: New client connected from ::ffff:172.22.0.1:37920 as mqttx_b418a851 (p5, c1, k60).
+1744789445: No will message specified.
+1744789445: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744789505: Client mqttx_b418a851 closed its connection.
+1744789565: New client connected from ::ffff:172.22.0.1:40996 as mqttx_b418a851 (p5, c1, k60).
+1744789565: No will message specified.
+1744789565: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744789625: Client mqttx_b418a851 closed its connection.
+1744789685: New client connected from ::ffff:172.22.0.1:37662 as mqttx_b418a851 (p5, c1, k60).
+1744789685: No will message specified.
+1744789685: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744789745: Client mqttx_b418a851 closed its connection.
+1744789805: New client connected from ::ffff:172.22.0.1:48658 as mqttx_b418a851 (p5, c1, k60).
+1744789805: No will message specified.
+1744789805: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744789865: Client mqttx_b418a851 closed its connection.
+1744789925: New client connected from ::ffff:172.22.0.1:58636 as mqttx_b418a851 (p5, c1, k60).
+1744789925: No will message specified.
+1744789925: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744789985: Client mqttx_b418a851 closed its connection.
+1744790045: New client connected from ::ffff:172.22.0.1:37646 as mqttx_b418a851 (p5, c1, k60).
+1744790045: No will message specified.
+1744790045: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744790105: Client mqttx_b418a851 closed its connection.
+1744790165: New client connected from ::ffff:172.22.0.1:52664 as mqttx_b418a851 (p5, c1, k60).
+1744790165: No will message specified.
+1744790165: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744790225: Client mqttx_b418a851 closed its connection.
+1744790285: New client connected from ::ffff:172.22.0.1:51842 as mqttx_b418a851 (p5, c1, k60).
+1744790285: No will message specified.
+1744790285: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744790345: Client mqttx_b418a851 closed its connection.
+1744790405: New client connected from ::ffff:172.22.0.1:33418 as mqttx_b418a851 (p5, c1, k60).
+1744790405: No will message specified.
+1744790405: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744790438: Client mqttx_b418a851 closed its connection.
+1744794545: New client connected from ::ffff:172.22.0.1:43170 as mqttx_b418a851 (p5, c1, k60).
+1744794545: No will message specified.
+1744794545: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744794605: Client mqttx_b418a851 closed its connection.
+1744794665: New client connected from ::ffff:172.22.0.1:58516 as mqttx_b418a851 (p5, c1, k60).
+1744794665: No will message specified.
+1744794665: Sending CONNACK to mqttx_b418a851 (0, 0)
+1744794725: Client mqttx_b418a851 closed its connection.
+1744815082: mosquitto version 2.0.21 terminating
+1744815095: mosquitto version 2.0.21 starting
+1744815095: Config loaded from /mosquitto/config/mosquitto.conf.
+1744815095: Opening ipv4 listen socket on port 1883.
+1744815095: Opening ipv6 listen socket on port 1883.
+1744815095: Opening websockets listen socket on port 9001.
+1744815095: mosquitto version 2.0.21 running
+1744884366: mosquitto version 2.0.21 terminating

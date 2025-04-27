@@ -8,7 +8,7 @@ $fichierListeEtudiants = "IPEtudiants-Test.csv" #<------------------------------
 $fichierListeTests = "controle.csv"             #<-------------------------------
 
 $intervalSeconds = 20  # Intervalle entre chaque itération en secondes
-$timeout =40 # Timeout d'ouverture de session ssh en secondes
+$timeout = 40 # Timeout d'ouverture de session ssh en secondes
 $tableNotes = @() # Table des tableNotes
 
 # -------------------------------------------------------------------------------
@@ -30,23 +30,23 @@ $data = Import-Csv $csvPath
 # -------------------------------------------------------------------------------
 # Remplir les tableaux
 foreach ($row in $data) {
-    $tableNotes+= @( New-Object PSObject -Property @{ ip = $row.iP; nom = $row.nomEtudiant } )
+    $tableNotes += @( New-Object PSObject -Property @{ ip = $row.iP; nom = $row.nomEtudiant } )
 }
 # Ajouter colonne Note
 foreach ($item in $tableNotes) {
-   $item | Add-Member -MemberType NoteProperty -Name "NOTE" -Value "0"
+    $item | Add-Member -MemberType NoteProperty -Name "NOTE" -Value "0"
 }
 # Ajouter colonne ping
 foreach ($item in $tableNotes) {
-   $item | Add-Member -MemberType NoteProperty -Name "ping" -Value ""
+    $item | Add-Member -MemberType NoteProperty -Name "ping" -Value ""
 }
 # Ajouter colonne acces-cont-run
 foreach ($item in $tableNotes) {
-   $item | Add-Member -MemberType NoteProperty -Name "cont" -Value ""
+    $item | Add-Member -MemberType NoteProperty -Name "cont" -Value ""
 }
 # Ajouter colonne acces-cont-run
 foreach ($item in $tableNotes) {
-   $item | Add-Member -MemberType NoteProperty -Name "Run" -Value ""
+    $item | Add-Member -MemberType NoteProperty -Name "Run" -Value ""
 }
 
 
@@ -94,7 +94,7 @@ $data = Import-Csv $csvPath
 
 # Initialiser les tableaux
 $controleNames = @()
-$fonctionDockers =@()
+$fonctionDockers = @()
 $containerNames = @()
 $commands = @()
 $expectedValues = @()
@@ -111,13 +111,38 @@ foreach ($row in $data) {
     }
 }
 
+
+
+# -------------------------------------------------------------------------------
+# Afficher table en plusieurs parties
+function Show-SplitTable {
+    param (
+        [Parameter(Mandatory = $true)] [array]$data,
+        [int]$columnsPerTable = 3
+    )
+    # $windowWidth = [System.Console]::WindowWidth
+    #Write-Host "Largeur de la fenêtre : $windowWidth"
+    $colNames = $data[0].PSObject.Properties.Name  # Récupère les noms des colonnes
+    $firstCol = $colNames[1]  # Garder la colonne 2
+    $otherCols = $colNames[2..($colNames.Count - 1)]  # Toutes les autres colonnes
+  
+    for ($i = 0; $i -lt $otherCols.Count; $i += $columnsPerTable) {
+        $part = $otherCols[$i..([math]::Min($i + $columnsPerTable - 1, $otherCols.Count - 1))]
+
+        # Toujours inclure la colonne 2
+        $selectedCols = @($firstCol) + $part  
+
+        $data | Select-Object $selectedCols | Format-Table -Property * -AutoSize #| Format-Table -AutoSize |  Out-String -Width $windowWidth
+    }
+}
+
 # -------------------------------------------------------------------------------
 # Executer les tests pour un Docker
 function Execute-Tests {
     param (
         [object]$ip
     )
-        # Vérifier si la session est valide
+    # Vérifier si la session est valide
     if (-not $ip ) {
         Write-Host "   ❌ $ip invalide ou non connectée." -ForegroundColor Red
         return $null
@@ -133,18 +158,18 @@ function Execute-Tests {
         $containerName = $containerNames[$i]
         $command = $commands[$i]
         $expectedValue = $expectedValues[$i]
-        switch ($fonctionDocker)
-        {
+        $result = $nul
+        switch ($fonctionDocker) {
             "exec" {
-                 $result = docker -H tcp://$($ip):2375 exec -it $containerName sh -c $($command) 2>$null
+                $result = docker -H tcp://$($ip):2375 exec -it $containerName sh -c $($command) 2>$null
             }
             "inspect" {
-                 $resultJson = docker -H tcp://$($ip):2375 inspect $containerName | ConvertFrom-Json
-                 $result = Invoke-Expression "`$resultJson.$command" 
-                 #Write-Host "INFO : "$($result) -ForegroundColor Yellow
+                $resultJson = docker -H tcp://$($ip):2375 inspect $containerName | ConvertFrom-Json
+                $result = Invoke-Expression "`$resultJson.$command" 
+                #Write-Host "INFO : "$($result) -ForegroundColor Yellow
             }
             default {
-                 $result = $nul
+                $result = $nul
             }
         }
         # Test si les mots séparer par un % dans #expectedValue sont présent dans le result
@@ -152,6 +177,7 @@ function Execute-Tests {
         $match = "$result" -match $pattern
 
         $results += [PSCustomObject]@{
+            ControleName  = $controleName 
             Command       = $command
             Output        = $result
             ExpectedValue = $expectedValue
@@ -159,8 +185,10 @@ function Execute-Tests {
         }
         if ($match) {
             Write-Host "  - Executing tests $controleName : ✅ $result" -ForegroundColor Green
-        }else{
+        }
+        else {
             Write-Host "  - Executing tests $controleName : ❌ $result ✅$expectedValue" -ForegroundColor Yellow
+            Write-Host "match"$match
         }
 
 
@@ -168,52 +196,49 @@ function Execute-Tests {
     return $results
 }
 
-        #Write-Host "INFO : $testResults" -ForegroundColor Yellow
+#Write-Host "INFO : $testResults" -ForegroundColor Yellow
 
 # -------------------------------------------------------------------------------
 # Boucle de Tests
 
-   for ($i = 0; $i -lt $tableNotes.Count; $i++) 
-   {
-     if ($tableNotes[$i].ping)
-     {
-        $note=0;
+for ($i = 0; $i -lt $tableNotes.Count; $i++) {
+    if ($tableNotes[$i].ping) {
+        $note = 0;
         Write-Host "Executing tests on host: $($tableNotes[$i].nom) $($tableNotes[$i].ip)" -ForegroundColor Cyan
 
-        try{ 
+        try { 
             $response = Invoke-WebRequest -Uri http://$($tableNotes[$i].ip):2375/info 2>$null
             if ($response.Headers["Content-Type"] -like "application/json*") {
-               $data= $response.Content | ConvertFrom-Json
-               $tableNotes[$i].cont = $data.Containers
-               $tableNotes[$i].run= $data.ContainersRunning
-               Write-Host "  - ✅-$($data.Containers)-$($data.ContainersRunning )" -ForegroundColor Green
-               $note=1;
+                $data = $response.Content | ConvertFrom-Json
+                $tableNotes[$i].cont = $data.Containers
+                $tableNotes[$i].run = $data.ContainersRunning
+                Write-Host "  - ✅-$($data.Containers)-$($data.ContainersRunning )" -ForegroundColor Green
+                $note = 1;
             }
-         }
-         catch {
+        }
+        catch {
             Write-Host "  - ❌ Pas joignable !" -ForegroundColor Red
             $tableNotes[$i].cont = $null
-            $tableNotes[$i].run= $null
-         }
+            $tableNotes[$i].run = $null
+        }
   
-        if($tableNotes[$i].cont -ne $null -and $tableNotes[$i].run -ne 0)
-        {
+        if ($tableNotes[$i].cont -ne $null -and $tableNotes[$i].run -ne 0) {
             # Réaliser les tests 
             $testResults = Execute-Tests -ip $tableNotes[$i].ip
 
         
-            for ($j = 0; $j -lt $commands.Length; $j++) {
+            for ($j = 0; $j -lt $ControleNames.Length; $j++) {
                 $command = $commands[$j]
                 $controleName = $controleNames[$j]
                 $columnName = "$controleName"
 
                 # Récupérer le résultat correspondant
-                $matchValue = ($testResults | Where-Object { $_.Command -eq $command } | Select-Object -First 1).Match
+                $matchValue = ($testResults | Where-Object { $_.controleName -eq $controleName } | Select-Object -First 1).Match
 
-                $tableNotes[$i].$columnName=$matchValue
-                if ($matchValue) {$note++}
+                $tableNotes[$i].$columnName = $matchValue
+                if ($matchValue) { $note++ }
             }  
-            $tableNotes[$i].NOTE=$note 
+            $tableNotes[$i].NOTE = $note 
             
 
         }
@@ -231,27 +256,5 @@ function Execute-Tests {
 
 
     }
-  }
-
-
-
-function Show-SplitTable {
-    param (
-        [Parameter(Mandatory = $true)] [array]$data,
-        [int]$columnsPerTable = 3
-    )
-   $windowWidth = [System.Console]::WindowWidth
-   #Write-Host "Largeur de la fenêtre : $windowWidth"
-   $colNames = $data[0].PSObject.Properties.Name  # Récupère les noms des colonnes
-   $firstCol = $colNames[1]  # Garder la colonne 2
-   $otherCols = $colNames[2..($colNames.Count - 1)]  # Toutes les autres colonnes
-  
-   for ($i = 0; $i -lt $otherCols.Count; $i += $columnsPerTable) {
-        $part = $otherCols[$i..([math]::Min($i + $columnsPerTable - 1, $otherCols.Count - 1))]
-
-        # Toujours inclure la colonne 2
-        $selectedCols = @($firstCol) + $part  
-
-        $data | Select-Object $selectedCols | Format-Table -Property * -AutoSize #| Format-Table -AutoSize |  Out-String -Width $windowWidth
-   }
 }
+
