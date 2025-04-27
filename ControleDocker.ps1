@@ -8,7 +8,6 @@ $fichierListeEtudiants = "IPEtudiants-Test.csv" #<------------------------------
 $fichierListeTests = "controle.csv"             #<-------------------------------
 
 $intervalSeconds = 20  # Intervalle entre chaque itération en secondes
-$timeout = 40 # Timeout d'ouverture de session ssh en secondes
 $tableNotes = @() # Table des tableNotes
 
 # -------------------------------------------------------------------------------
@@ -137,8 +136,8 @@ function Show-SplitTable {
 }
 
 # -------------------------------------------------------------------------------
-# Executer les tests pour un Docker
-function Execute-Tests {
+# Invoker les tests pour un Docker
+function Invoke-Tests {
     param (
         [object]$ip
     )
@@ -224,7 +223,7 @@ for ($i = 0; $i -lt $tableNotes.Count; $i++) {
   
         if ($tableNotes[$i].cont -ne $null -and $tableNotes[$i].run -ne 0) {
             # Réaliser les tests 
-            $testResults = Execute-Tests -ip $tableNotes[$i].ip
+            $testResults = Invoke-Tests -ip $tableNotes[$i].ip
 
         
             for ($j = 0; $j -lt $ControleNames.Length; $j++) {
