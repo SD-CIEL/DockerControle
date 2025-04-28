@@ -10,3 +10,4 @@ contMqttx,exec,mqtt_mqttx-web,cat /proc/1/comm ,http-server
 connexMqttx,exec,mqtt_mosquitto,cat /mosquitto/log/mosquitto.log | grep -o \"mqttx_\" | head -1,mqttx_
 mesMqttx,exec,mqtt_mosquitto,cat /mosquitto/log/mosquitto.log | grep -o \"Sending PUBLISH to mqttx\" | head -1,Sending PUBLISH to mqttx
 contPortainer,exec,mqtt_portainer,cat /proc/1/comm ,portainer
+portPortainer,port,mqtt_portainer,,8083

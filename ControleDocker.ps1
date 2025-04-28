@@ -167,6 +167,11 @@ function Invoke-Tests {
                 $result = Invoke-Expression "`$resultJson.$command" 
                 #Write-Host "INFO : "$($result) -ForegroundColor Yellow
             }
+            "port" { # le / dans le nom de l'attribut Json est complique a gerer !!!!
+                $resultJson = docker -H tcp://$($ip):2375 inspect $containerName | ConvertFrom-Json
+                $result = $resultJson.HostConfig.PortBindings.'9000/tcp'.HostPort
+                #Write-Host "INFO : "$($result) -ForegroundColor Yellow
+            }
             default {
                 $result = $nul
             }
