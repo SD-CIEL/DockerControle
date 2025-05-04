@@ -2,3 +2,4 @@ BTS Serge
 BTS Pour obtenir les messages dans le log :
 BTS mosquitto_sub -h localhost -t "#" -v >> /mosquitto/log/messages.log
 BTS SUPER
+BTS SUPER log

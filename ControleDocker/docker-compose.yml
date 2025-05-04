@@ -9,6 +9,14 @@ services:
       - ./VolumesMosquitto/config:/mosquitto/config
       - ./VolumesMosquitto/data:/mosquitto/data
       - ./VolumesMosquitto/log:/mosquitto/log
+  mqtt_logger:
+      image: eclipse-mosquitto
+      depends_on:
+        - mqtt_broker
+      entrypoint: >
+        sh -c 'sleep 2 && mosquitto_sub -h mqtt_broker -t "#" -v >> /mosquitto/log/messages.log'
+      volumes:
+        - ./VolumesMosquitto/log:/mosquitto/log
   mqtt_clientweb:
     image: emqx/mqttx-web
     container_name: mqtt_mqttx-web
@@ -31,9 +39,9 @@ services:
     image: node:20-slim
     volumes:
       - ./VolumesMosquitto/log:/log
-      - ./VolumesServeurWebLog/www:/app/www
-      - ./VolumesServeurWebLog/server.js:/app/server.js
-      - ./VolumesServeurWebLog/package.json:/app/package.json
+      - ./VolumesServeurWebLog/www:/app/www                   
+      - ./VolumesServeurWebLog/server.js:/app/server.js         # uniquement les fichiers utiles.
+      - ./VolumesServeurWebLog/package.json:/app/package.json   # uniquement les fichiers utiles.
     working_dir: /app
     command: sh -c "npm install && node server.js"
     ports:

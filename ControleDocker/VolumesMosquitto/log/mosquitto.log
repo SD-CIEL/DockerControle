@@ -943,3 +943,76 @@
 1746338602: Opening websockets listen socket on port 9001.
 1746338602: mosquitto version 2.0.21 running
 1746338666: mosquitto version 2.0.21 terminating
+1746339882: mosquitto version 2.0.21 starting
+1746339882: Config loaded from /mosquitto/config/mosquitto.conf.
+1746339882: Opening ipv4 listen socket on port 1883.
+1746339882: Opening ipv6 listen socket on port 1883.
+1746339882: Opening websockets listen socket on port 9001.
+1746339882: mosquitto version 2.0.21 running
+1746339973: New client connected from ::ffff:172.22.0.1:59868 as mqttx_b418a851 (p5, c1, k60).
+1746339973: No will message specified.
+1746339973: Sending CONNACK to mqttx_b418a851 (0, 0)
+1746339973: Received SUBSCRIBE from mqttx_b418a851
+1746339973: 	BTS (QoS 0)
+1746339973: mqttx_b418a851 0 BTS
+1746339973: Sending SUBACK to mqttx_b418a851
+1746339981: Received PUBLISH from mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (9 bytes))
+1746339981: Sending PUBLISH to mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (9 bytes))
+1746340042: Received PINGREQ from mqttx_b418a851
+1746340042: Sending PINGRESP to mqttx_b418a851
+1746340086: mosquitto version 2.0.21 terminating
+1746340086: Client mqttx_b418a851 closed its connection.
+1746340099: mosquitto version 2.0.21 starting
+1746340099: Config loaded from /mosquitto/config/mosquitto.conf.
+1746340099: Opening ipv4 listen socket on port 1883.
+1746340099: Opening ipv6 listen socket on port 1883.
+1746340099: Opening websockets listen socket on port 9001.
+1746340099: mosquitto version 2.0.21 running
+1746340100: New client connected from ::ffff:172.22.0.1:48480 as mqttx_b418a851 (p5, c1, k60).
+1746340100: No will message specified.
+1746340100: Sending CONNACK to mqttx_b418a851 (0, 0)
+1746340100: Received SUBSCRIBE from mqttx_b418a851
+1746340100: 	BTS (QoS 0)
+1746340100: mqttx_b418a851 0 BTS
+1746340100: Sending SUBACK to mqttx_b418a851
+1746340161: Received PINGREQ from mqttx_b418a851
+1746340161: Sending PINGRESP to mqttx_b418a851
+1746340222: Received PINGREQ from mqttx_b418a851
+1746340222: Sending PINGRESP to mqttx_b418a851
+1746340258: mosquitto version 2.0.21 terminating
+1746340258: Client mqttx_b418a851 closed its connection.
+1746340326: mosquitto version 2.0.21 starting
+1746340326: Config loaded from /mosquitto/config/mosquitto.conf.
+1746340326: Opening ipv4 listen socket on port 1883.
+1746340326: Opening ipv6 listen socket on port 1883.
+1746340326: Opening websockets listen socket on port 9001.
+1746340326: mosquitto version 2.0.21 running
+1746340327: New client connected from ::ffff:172.22.0.1:38642 as mqttx_b418a851 (p5, c1, k60).
+1746340327: No will message specified.
+1746340327: Sending CONNACK to mqttx_b418a851 (0, 0)
+1746340328: New connection from 172.22.0.5:45978 on port 1883.
+1746340328: New client connected from 172.22.0.5:45978 as auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E (p2, c1, k60).
+1746340328: No will message specified.
+1746340328: Sending CONNACK to auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E (0, 0)
+1746340328: Received SUBSCRIBE from auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E
+1746340328: 	# (QoS 0)
+1746340328: auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E 0 #
+1746340328: Sending SUBACK to auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E
+1746340366: Client mqttx_b418a851 already connected, closing old connection.
+1746340366: New client connected from ::ffff:172.22.0.1:33368 as mqttx_b418a851 (p5, c1, k60).
+1746340366: No will message specified.
+1746340366: Sending CONNACK to mqttx_b418a851 (0, 0)
+1746340366: Client mqttx_b418a851 closed its connection.
+1746340366: Received SUBSCRIBE from mqttx_b418a851
+1746340366: 	BTS (QoS 0)
+1746340366: mqttx_b418a851 0 BTS
+1746340366: Sending SUBACK to mqttx_b418a851
+1746340368: Received PUBLISH from mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (9 bytes))
+1746340368: Sending PUBLISH to mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (9 bytes))
+1746340368: Sending PUBLISH to auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E (d0, q0, r0, m0, 'BTS', ... (9 bytes))
+1746340389: Received PINGREQ from auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E
+1746340389: Sending PINGRESP to auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E
+1746340389: Received DISCONNECT from auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E
+1746340389: Client auto-9401D1A7-F712-6870-D8DF-3F9CDB0D991E disconnected.
+1746340390: mosquitto version 2.0.21 terminating
+1746340390: Client mqttx_b418a851 closed its connection.
