@@ -31,7 +31,9 @@ services:
     image: node:20-slim
     volumes:
       - ./VolumesMosquitto/log:/log
-      - ./VolumesServeurWebLog:/app
+      - ./VolumesServeurWebLog/www:/app/www
+      - ./VolumesServeurWebLog/server.js:/app/server.js
+      - ./VolumesServeurWebLog/package.json:/app/package.json
     working_dir: /app
     command: sh -c "npm install && node server.js"
     ports:

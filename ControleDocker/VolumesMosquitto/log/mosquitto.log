@@ -902,3 +902,44 @@
 1746290187: Opening ipv6 listen socket on port 1883.
 1746290187: Opening websockets listen socket on port 9001.
 1746290187: mosquitto version 2.0.21 running
+1746290914: New connection from ::1:55598 on port 1883.
+1746290914: New client connected from ::1:55598 as auto-5C7543E3-F92A-261B-BFA1-2D982C59F973 (p2, c1, k60).
+1746290914: No will message specified.
+1746290914: Sending CONNACK to auto-5C7543E3-F92A-261B-BFA1-2D982C59F973 (0, 0)
+1746290914: Received SUBSCRIBE from auto-5C7543E3-F92A-261B-BFA1-2D982C59F973
+1746290914: 	# (QoS 0)
+1746290914: auto-5C7543E3-F92A-261B-BFA1-2D982C59F973 0 #
+1746290914: Sending SUBACK to auto-5C7543E3-F92A-261B-BFA1-2D982C59F973
+1746290974: Received PINGREQ from auto-5C7543E3-F92A-261B-BFA1-2D982C59F973
+1746290974: Sending PINGRESP to auto-5C7543E3-F92A-261B-BFA1-2D982C59F973
+1746291013: New client connected from ::ffff:172.22.0.1:44074 as mqttx_b418a851 (p5, c1, k60).
+1746291013: No will message specified.
+1746291013: Sending CONNACK to mqttx_b418a851 (0, 0)
+1746291013: Received SUBSCRIBE from mqttx_b418a851
+1746291013: 	BTS (QoS 0)
+1746291013: mqttx_b418a851 0 BTS
+1746291013: Sending SUBACK to mqttx_b418a851
+1746291020: Received PUBLISH from mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1746291020: Sending PUBLISH to mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1746291020: Sending PUBLISH to auto-5C7543E3-F92A-261B-BFA1-2D982C59F973 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1746291023: Received PUBLISH from mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1746291023: Sending PUBLISH to mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1746291023: Sending PUBLISH to auto-5C7543E3-F92A-261B-BFA1-2D982C59F973 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1746291023: Received PUBLISH from mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1746291023: Sending PUBLISH to mqttx_b418a851 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1746291023: Sending PUBLISH to auto-5C7543E3-F92A-261B-BFA1-2D982C59F973 (d0, q0, r0, m0, 'BTS', ... (5 bytes))
+1746291034: Received PINGREQ from auto-5C7543E3-F92A-261B-BFA1-2D982C59F973
+1746291034: Sending PINGRESP to auto-5C7543E3-F92A-261B-BFA1-2D982C59F973
+1746291084: Received PINGREQ from mqttx_b418a851
+1746291084: Sending PINGRESP to mqttx_b418a851
+1746291094: Received PINGREQ from auto-5C7543E3-F92A-261B-BFA1-2D982C59F973
+1746291094: Sending PINGRESP to auto-5C7543E3-F92A-261B-BFA1-2D982C59F973
+1746291124: mosquitto version 2.0.21 terminating
+1746291124: Client mqttx_b418a851 closed its connection.
+1746338602: mosquitto version 2.0.21 starting
+1746338602: Config loaded from /mosquitto/config/mosquitto.conf.
+1746338602: Opening ipv4 listen socket on port 1883.
+1746338602: Opening ipv6 listen socket on port 1883.
+1746338602: Opening websockets listen socket on port 9001.
+1746338602: mosquitto version 2.0.21 running
+1746338666: mosquitto version 2.0.21 terminating
