@@ -62,3 +62,17 @@ tasklist /svc /FI "PID eq 4284"
 - controle.csv : liste des controles : nom du controle, nom du container, commande bash et résultat attendu
 - resultats.csv : liste des résultats obtenus pour chaque VM/étudiant. Fichier horodaté toutes les heures.
 
+## Arborescence du TP à la fin de l'installation
+```
+ControleDocker
+│   docker-compose.yml
+│
+└───VolumesMosquitto
+    ├───config
+    │       mosquitto.conf
+    │
+    ├───data
+    └───log
+            messages.log
+            mosquitto.log
+```
